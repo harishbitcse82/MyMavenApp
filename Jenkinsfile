@@ -23,17 +23,15 @@ pipeline {
             }
         }
 
-        stage('SonarQube Analysis') {
+        
+        
+        stage('Deploy to Tomcat') {
             steps {
-                sh 'mvn sonar:sonar -Dsonar.projectKey=your-project-key'
+                deploy adapters: [tomcat9(credentialsId: 'admin', path: '', url: 'http://localhost:9090/')], war: '**/*.war'
             }
         }
 
-        stage('Deploy') {
-            steps {
-                sh 'mvn deploy'  // Deploy to repository (e.g., Nexus, Artifactory)
-            }
-        }
+        
     }
 
     post {
