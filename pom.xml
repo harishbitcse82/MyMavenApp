@@ -3,8 +3,8 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.example</groupId>
   <artifactId>MyMavenApp</artifactId>
-   <packaging>war</packaging>
-<!--<packaging>jar</packaging>-->
+  <!-- <packaging>war</packaging> -->
+<packaging>jar</packaging>
   <version>1.0-SNAPSHOT</version>
  
 
@@ -48,27 +48,27 @@
 <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             
-            <!--<artifactId>maven-jar-plugin</artifactId>
-            <version>3.0.1</version> -->
-            <artifactId>maven-war-plugin</artifactId>
-            <version>3.3.1</version>
+            <artifactId>maven-jar-plugin</artifactId>
+            <version>3.0.1</version> 
+           <!-- <artifactId>maven-war-plugin</artifactId>
+            <version>3.3.1</version>-->
             
-             <configuration>
+           <!--   <configuration>
         <webXml>src/main/webapp/WEB-INF/web.xml</webXml>
-      </configuration> 
+      </configuration> -->
       
       <!-- <configuration>
         <failOnMissingWebXml>false</failOnMissingWebXml>
       </configuration> -->
       
       
-           <!-- <configuration>
+           <configuration>
                 <archive>
                     <manifestEntries>
                         <Main-Class>com.example.App</Main-Class>
                     </manifestEntries>
                 </archive>
-            </configuration> -->
+            </configuration> 
             
             
         </plugin>
