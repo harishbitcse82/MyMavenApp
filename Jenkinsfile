@@ -29,7 +29,7 @@ pipeline {
         stage('Run Application') {
             steps {
                 // Start the JAR application on the remote server
-                sh 'java -jar target/MyMavenApp-1.0-SNAPSHOT.jar > /dev/null 2>&1 &"'
+                sh 'java -jar target/MyMavenApp-1.0-SNAPSHOT.jar'
             }
         }
 
