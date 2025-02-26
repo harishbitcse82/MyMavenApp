@@ -25,9 +25,16 @@ pipeline {
 
         
         
-        stage('Deploy to Tomcat') {
+       stage('Deploy') {
             steps {
-                deploy adapters: [tomcat9(credentialsId: 'admin', path: '', url: 'http://localhost:9090/')], war: '**/*.war'
+                // Deploy the JAR file (Copy to a remote server)
+                sh 'scp target/MyMavenApp-1.0-SNAPSHOT.jar harish@localhost:/~/applications/deploy/'
+            }
+        }
+        stage('Run Application') {
+            steps {
+                // Start the JAR application on the remote server
+                sh 'ssh harish@localhost "nohup java -jar /~/applications/deploy/MyMavenApp-1.0-SNAPSHOT.jar > /dev/null 2>&1 &"'
             }
         }
 
