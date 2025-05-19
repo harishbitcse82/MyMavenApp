@@ -10,7 +10,7 @@ pool:
   name: Default
 
 steps:
-- script: echo Hello, world!
+- script: echo Hello, world. in yaml file!
   displayName: 'Run a one-line script'
 - script: mvn clean install
   displayName: 'Build with Maven'  
